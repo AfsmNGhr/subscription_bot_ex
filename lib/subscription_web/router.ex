@@ -8,7 +8,8 @@ defmodule SubscriptionWeb.Router do
   scope "/api", SubscriptionWeb do
     pipe_through :api
 
-    scope "/hooks" do
+    scope "/hooks", Hooks do
+      post "/telegram", TelegramHookController, :create
     end
   end
 end

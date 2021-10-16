@@ -22,3 +22,6 @@ config :subscription, SubscriptionWeb.Endpoint,
     port: String.to_integer(System.get_env("PORT") || "4000")
   ],
   secret_key_base: secret_key_base
+
+config :nadia,
+  token: System.get_env("TELEGRAM_TOKEN")

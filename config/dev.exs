@@ -22,3 +22,6 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix,
   stacktrace_depth: 20,
   plug_init_mode: :runtime
+
+config :nadia,
+  token: System.get_env("TELEGRAM_TOKEN")
