@@ -1,0 +1,11 @@
+FROM elixir:1.12.3-alpine
+
+RUN apk add --update --no-cache postgresql-client && \
+    rm -rf /tmp/* /var/tmp/* /usr/share/man /var/cache/apk/* /var/log/* ~/.cache
+
+WORKDIR /subscription
+
+RUN mix local.hex --force && \
+    mix local.rebar --force
+
+CMD mix phx.server
